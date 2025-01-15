@@ -28,6 +28,22 @@ Fotos do Sistema em funcionamento
 ![image](https://github.com/user-attachments/assets/e5023459-7ed0-4448-b6a8-19fb3a110d09)
 ![image](https://github.com/user-attachments/assets/836b6a98-1fdd-4def-8e73-f5de6a8a23bd)
 ![image](https://github.com/user-attachments/assets/dcbf2925-a15d-4dc4-8a58-03a0cbfec5c6)
+![image](https://github.com/user-attachments/assets/bad1a12a-7e71-4233-9be9-e877fb31eb7d)
+![image](https://github.com/user-attachments/assets/763a2630-79d0-4c46-aec7-f17d94979d22)
+![image](https://github.com/user-attachments/assets/bfad6737-a67f-4d8c-8a89-cbf5c25beee8)
+![image](https://github.com/user-attachments/assets/002b1bb4-87fb-47b9-afb9-ddd2d5e9f0be)
+![image](https://github.com/user-attachments/assets/a2b671a9-f9e3-4c4f-a261-9ac56ed1d58f)
+
+![image](https://github.com/user-attachments/assets/764239cf-a91f-4f96-80a7-6fab92678bcc)
+![image](https://github.com/user-attachments/assets/5f8aaec6-89f4-407e-bd7a-c6986f47327f)
+![image](https://github.com/user-attachments/assets/9c6296dd-7030-47b9-9064-fff4471cd967)
+
+
+
+
+
+
+
 
 
 
