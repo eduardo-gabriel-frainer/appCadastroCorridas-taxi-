@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/stylesListar.css" />
+    <title>Lista de Motoristas</title>
+
+</head>
+
+<body>
+    <!-- Sidebar para navegação -->
+    <div class="sidebar">
+        <a th:href="@{/cadCorridas}">Cadastro de Corridas</a>
+        <a th:href="@{/cadAplicativos}">Cadastro de Aplicativos</a>
+        <a th:href="@{/cadMotoristas}">Cadastro de Motoristas</a>
+        <a class="aqui" th:href="@{/listar_motorista}">- Listar Motoristas</a>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+        <div class="container">
+            <h1>Lista de Motoristas</h1>
+
+            <!-- Mensagem de erro -->
+            <div th:if="${erro}" class="alert alert-danger">
+                <p th:text="${erro}"></p>
+            </div>
+
+            <!-- Mensagem de sucesso -->
+            <div th:if="${sucesso}" class="alert alert-success">
+                <p th:text="${sucesso}"></p>
+            </div>
+
+            <!-- Tabela para listar as corridas -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Idade</th>
+                        <th>Tipo da Carteira</th>
+                        <th>Placa</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="motorista : ${motorista}">
+                        <td th:text="${motorista.id_motorista}"></td>
+                        <td th:text="${motorista.nome}"></td>
+                        <td th:text="${motorista.telefone}"></td>
+                        <td th:text="${motorista.idade}"></td>
+                        <td th:text="${motorista.tipo}"></td>
+                        <td th:text="${motorista.placa}"></td>
+                        <td>
+                            <div class="acao">
+                                <a
+                                    th:href="@{/motorista/editar/{id_motorista}(id_motorista=${motorista.id_motorista})}">
+                                    <button type="button" class="edit">Editar</button>
+                                </a>
+                                <form
+                                    th:action="@{/motorista/deletar/{id_motorista}(id_motorista=${motorista.id_motorista})}"
+                                    method="post">
+                                    <button type="submit"
+                                        onclick="return confirm('Tem certeza que deseja deletar este Motorista?');"
+                                        class="del">Deletar</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Botão para cadastrar nova corrida -->
+            <br>
+            <a th:href="@{/cadMotoristas}">
+                <button type="button">Cadastrar Nova Corrida</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

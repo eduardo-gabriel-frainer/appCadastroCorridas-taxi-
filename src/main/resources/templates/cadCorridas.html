@@ -1,0 +1,137 @@
+<!-- salvo -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/stylesCadastro.css" />
+    <title>Cadastro de Corrida</title>
+
+    <style>
+        .container {
+            background-color: white;
+            padding: 20px 30px 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 0 0 15px 0; /* Reduz a margem superior para 0 */
+        }
+        
+        .form-group {
+            margin-bottom: 10px;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <!-- Sidebar for navigation -->
+    <div class="sidebar">
+        <a class="aqui" th:href="@{/cadCorridas}">Cadastro de Corridas</a>
+        <a class="subMenu" th:href="@{/listar_corrida}">- Listar Corridas</a>
+        <a th:href="@{/cadAplicativos}">Cadastro de Aplicativos</a>
+        <a th:href="@{/cadMotoristas}">Cadastro de Motoristas</a>
+    </div>
+
+    <a th:href="@{/telaInicial}">
+        <img src="/logo.png" class="logo-topo-direira" alt="Logo">
+    </a>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <div class="container content-section" id="cadastrar">
+            <h1>Cadastrar Corrida</h1>
+            <form th:action="@{/cadCorridas}" method="post">
+                <div class="form-group">
+                    <label for="origem">Origem:</label>
+                    <input 
+                        type="text" 
+                        id="origem" 
+                        name="origem" 
+                        maxlength="150" 
+                        required 
+                        pattern="\S.*" 
+                        title="O campo não pode estar vazio ou conter apenas espaços.">
+                </div>
+                <div class="form-group">
+                    <label for="destino">Destino:</label>
+                    <input type="text" id="destino" name="destino" maxlength="150" pattern="\S.*" 
+                    title="O campo não pode estar vazio ou conter apenas espaços." required>
+                </div>
+                <div class="form-group">
+                    <label for="nome_usuario">Nome do Cliente:</label>
+                    <input type="text" id="nome_usuario" name="nome_usuario" maxlength="150" pattern="\S.*" 
+                    title="O campo não pode estar vazio ou conter apenas espaços." required>
+                </div>
+                <div class="form-group">
+                    <label for="valor">Valor (R$):</label>
+                    <input 
+                        type="text" 
+                        id="valor" 
+                        name="valor" 
+                        placeholder="0,00" 
+                        required 
+                        oninput="formatarParaVirgula(this)" 
+                        onblur="formatarParaPonto(this)">
+                </div>
+                <div class="form-group">
+                    <label for="forma_pagamento">Forma de Pagamento:</label>
+                    <select id="forma_pagamento" name="forma_pagamento" required>
+                        <option value=""></option>
+                        <option value="Dinheiro">Dinheiro</option>
+                        <option value="Cartao Crédito">Cartao Crédito</option>
+                        <option value="Cartao Débito">Cartao Débito</option>
+                        <option value="Pix">Pix</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="data_corrida">Data:</label>
+                    <input type="datetime-local" id="data_corrida" name="data_corrida" min="2024-11-25T00:00" max="2034-11-25T23:59" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_motorista">Motorista:</label>
+                    <select id="id_motorista" name="id_motorista" required>
+                        <option value="">Selecione um Motorista</option>
+                        <option th:each="motorista : ${motoristas}" th:value="${motorista.id_motorista}"
+                            th:text="${motorista.nome}"></option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_aplicativo">Aplicativo:</label>
+                    <select id="id_aplicativo" name="id_aplicativo" required>
+                        <option value="">Selecione um Aplicativo</option>
+                        <option th:each="aplicativo : ${aplicativos}" th:value="${aplicativo.id_aplicativo}"
+                            th:text="${aplicativo.nome}"></option>
+                    </select>
+                </div>
+                    <div class="form-group">
+                        <button type="submit">Cadastrar Corrida</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    // Formata enquanto o usuário digita (vírgula como separador)
+    function formatarParaVirgula(input) {
+        let valor = input.value.replace(/\D/g, ''); // Remove não numéricos
+        valor = (valor / 100).toFixed(2).replace('.', ','); // Formata com vírgula
+        input.value = valor;
+    }
+
+    // Converte vírgula para ponto ao sair do campo
+    function formatarParaPonto(input) {
+        input.value = input.value.replace(',', '.'); // Substitui vírgula por ponto
+    }
+</script>
+
+</html> 

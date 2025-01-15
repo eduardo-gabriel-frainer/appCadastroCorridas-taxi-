@@ -1,0 +1,48 @@
+<!-- salvo sem espaço -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/stylesCadastro.css" />
+    <title>Cadastro de Aplicativos</title>
+
+</head>
+
+<body>
+    <!-- Sidebar for navigation -->
+    <div class="sidebar">
+        <a th:href="@{/cadCorridas}">Cadastro de Corridas</a>
+        <a class="aqui" th:href="@{/cadAplicativos}">Cadastro de Aplicativos</a>
+        <a class="subMenu" th:href="@{/listarAplicativo}">- Listar Aplicativos</a>
+        <a th:href="@{/cadMotoristas}">Cadastro de Motoristas</a>
+    </div>
+
+    <a th:href="@{/telaInicial}">
+        <img src="/logo.png" class="logo-topo-direira" alt="Logo">
+    </a>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <div class="container content-section" id="cadastrar">
+            <h1>Cadastro de Aplicativos</h1>
+            <form action="/cadAplicativos" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" pattern="\S.*" required>
+                </div>
+                <div class="form-group">
+
+                    <label for="tarifa">Tarifa %:</label>
+                    <input type="number" id="tarifa" name="tarifa" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Cadastrar Aplicativo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

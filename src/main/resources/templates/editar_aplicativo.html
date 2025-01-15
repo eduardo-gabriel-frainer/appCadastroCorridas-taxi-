@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/stylesCadastro.css" />
+    <title>Editar Aplicativo</title>
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <a th:href="@{/cadCorridas}">Cadastro de Corridas</a>
+        <a th:href="@{/cadAplicativos}">Cadastro de Aplicativos</a>
+        <a th:href="@{/listar_aplicativo}">- Listar Aplicativo</a>
+        <a th:href="@{/cadMotoristas}">Cadastro de Motoristas</a>
+    </div>
+
+    <div class="main-content">
+        <div class="container content-section" id="editar">
+            <h1>Editar Aplicativo</h1>
+            <form th:action="@{/aplicativo/salvar}" th:object="${aplicativo}" method="post">
+                <input type="hidden" th:field="*{id_aplicativo}" />
+
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" th:field="*{nome}" id="nome" maxlength="150" pattern="\S.*" required>
+                </div>
+                <div class="form-group">
+                    <label for="tarifa">Tarifa %:</label>
+                    <input type="text" th:field="*{tarifa}" id="tarifa" maxlength="150" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Salvar</button>
+                </div>
+            </form>
+            <div class="botaoSimples">
+                <a th:href="@{/cadAplicativos}">Voltar</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

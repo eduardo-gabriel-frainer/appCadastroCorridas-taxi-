@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Tela Inicial</title>
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f9f8;
+            display: flex;
+            min-height: 100vh;
+            color: #333;
+        }
+
+
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(135deg, #75c085, #5ea872);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            position: fixed;
+            height: 100%;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar a {
+            color: #ffffff;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            width: 90%;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background-color: #40a357;
+            transform: scale(1.05);
+        }
+
+        .sidebar .aqui {
+            background-color: #40a357;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: calc(100% - 250px);
+            /* Define a largura ajustada para descontar a barra lateral */
+            margin-left: 250px;
+            /* Garante que o conteúdo comece depois da barra lateral */
+            margin-right: auto;
+            /* Mantém o conteúdo centralizado horizontalmente */
+            padding: 40px;
+            /* Opcional: adiciona espaço interno */
+            box-sizing: border-box;
+            /* Garante que o padding não afete a largura calculada */
+        }
+
+        h1 {
+            color: #08430d;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            color: #0a5c16;
+            font-size: 1.6em;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        img {
+            width: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar for navigation -->
+    <div class="sidebar">
+        <a th:href="@{/cadCorridas}">Cadastro de Corridas</a>
+        <a th:href="@{/cadAplicativos}">Cadastro de Aplicativos</a>
+        <a th:href="@{/listarAplicativo}">Listar Aplicativos</a>
+        <a th:href="@{/cadMotoristas}">Cadastro de Motoristas</a>
+    </div>
+
+
+
+    <!-- Main content -->
+    <div class="main-content" data-aos="fade-left">
+
+        <img src="/logo.png">
+
+        <h1>Bem-vindos ao sistema de Cadastro de Corridas</h1>
+        <h2>CT Desenvolvimento De Sistemas</h2>
+
+        <div class="footer">
+            © Todos os direitos reservados Eduardo Gabriel Frainer
+        </div>
+
+    </div>
+
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+
+</body>
+
+</html>

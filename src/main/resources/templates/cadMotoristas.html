@@ -1,0 +1,100 @@
+<!-- salvo -->
+ 
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/stylesCadastro.css" />
+    <title>Cadastro de Motoristas</title>
+
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a th:href="@{/cadCorridas}">Cadastro de Corridas</a>
+        <a th:href="@{/cadAplicativos}">Cadastro de Aplicativos</a>
+        <a class="aqui" th:href="@{/cadMotoristas}">Cadastro de Motoristas</a>
+        <a class="subMenu" th:href="@{/listar_motorista}">- Listar Motoristas</a>
+    </div>
+
+    <a th:href="@{/telaInicial}">
+        <img src="/logo.png" class="logo-topo-direira" alt="Logo">
+    </a>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <div class="container">
+            <h1>Cadastro de Motoristas</h1>
+            <form th:action="@{/cadMotoristas}" method="post">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" pattern="\S.*" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input 
+                        type="text" 
+                        id="telefone" 
+                        name="telefone" 
+                        required 
+                        maxlength="15" 
+                        placeholder="Ex: (99) 99999-9999 ou (99) 9999-9999" 
+                        title="Digite um número de telefone válido com DDD."
+                        oninput="formatarTelefone(this)" />
+                </div>
+                <div class="form-group">
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" name="idade" min="18" max="110" step="1" 
+                    oninput="this.value = this.value.replace(/[^\d]/g, '')"required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo da Carteira:</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value=""></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="placa">Placa:</label>
+                    <input 
+                        type="text" 
+                        id="placa" 
+                        name="placa" 
+                        maxlength="7" 
+                        pattern="[A-Za-z0-9]{7}" 
+                        placeholder="Ex: ABC1234" 
+                        title="A placa deve conter exatamente 7 caracteres, incluindo letras e números." 
+                        required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Cadastrar Motorista</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    function formatarTelefone(input) {
+        let valor = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+        if (valor.length <= 10) {
+            // Formato para número fixo (8 dígitos no final)
+            valor = valor.replace(/^(\d{2})(\d)/, '($1) $2'); // Adiciona o parênteses no DDD
+            valor = valor.replace(/(\d{4})(\d)/, '$1-$2'); // Adiciona o hífen no número
+        } else {
+            // Formato para número móvel (9 dígitos no final)
+            valor = valor.replace(/^(\d{2})(\d)/, '($1) $2'); // Adiciona o parênteses no DDD
+            valor = valor.replace(/(\d{5})(\d)/, '$1-$2'); // Adiciona o hífen no número
+        }
+
+        input.value = valor.slice(0, 16); // Limita o tamanho para 16 caracteres
+    }
+</script>
+
+</html>

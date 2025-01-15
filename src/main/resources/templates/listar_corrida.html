@@ -1,0 +1,97 @@
+<!-- listar corrida -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/stylesListar.css" />
+    <title>Lista de Corridas</title>
+</head>
+
+<body>
+    <!-- Sidebar para navegação -->
+    <div class="sidebar">
+        <a th:href="@{/cadCorridas}">Cadastro de Corridas</a>
+        <a class="aqui" th:href="@{/listar_corrida}">- Listar Corridas</a>
+        <a th:href="@{/cadAplicativos}">Cadastro de Aplicativos</a>
+        <a th:href="@{/cadMotoristas}">Cadastro de Motoristas</a>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+        <div class="container">
+            <h1>Lista de Corridas</h1>
+
+            <div class="pesquisa">
+                <form method="get" action="/listar_corrida">
+                    <label>Motoristas:</label>
+                    <select name="id_motorista">
+                        <option value="" disabled selected>Selecione um motorista</option>
+                        <option th:each="motorista : ${motorista}" th:value="${motorista.id_motorista}" th:text="${motorista.nome}">
+                        </option>
+                    </select>
+                    <button type="submit">Buscar</button>
+                </form>
+                <a href="/listar_corrida" class="limpar">Limpar</a>
+            </div>
+
+            <div th:if="${!#lists.isEmpty(corridas)}" class="total">
+                <h3>Total Arrecadado: <span th:text="${totalValor}"></span></h3>
+            </div>
+
+            <!-- Tabela para listar as corridas -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Origem</th>
+                        <th>Destino</th>
+                        <th>Nome Cliente</th>
+                        <th>Valor</th>
+                        <th>Forma de Pagamento</th>
+                        <th>Data</th>
+                        <th>Motorista</th>
+                        <th>Aplicativo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="corrida : ${corridas}">
+                        <td th:text="${corrida.id}"></td>
+                        <td th:text="${corrida.origem}"></td>
+                        <td th:text="${corrida.destino}"></td>
+                        <td th:text="${corrida.nome_usuario}"></td>
+                        <td th:text="${corrida.valor}"></td>
+                        <td th:text="${corrida.forma_pagamento}"></td>
+                        <td th:text="${corrida.data_corrida}"></td>
+                        <td th:text="${corrida.motorista?.nome}"></td>
+                        <td th:text="${corrida.aplicativo?.nome}"></td>
+                        <td>
+                            <div class="acao">
+                                <a th:href="@{/corrida/editar/{id}(id=${corrida.id})}">
+                                    <button type="button" class="edit">Editar</button>
+                                </a>
+                                <form th:action="@{/corrida/deletar/{id}(id=${corrida.id})}" method="post">
+                                    <button type="submit" onclick="return confirm('Tem certeza que deseja deletar esta corrida?');" class="del">Deletar</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div th:if="${#lists.isEmpty(corridas)}" class="alert-filtro">
+                Este motorista não está associado a nenhuma corrida.
+            </div>
+            <a class="pdf" th:href="@{/gerar-relatorio-pdf}">
+                <button type="button">Gerar Relatório PDF</button>
+            </a>
+            <br>
+            <a th:href="@{/cadCorridas}">
+                <button type="button">Cadastrar Nova Corrida</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/stylesListar.css"/>
+    <title>Lista de Aplicativo</title>
+
+</head>
+
+<body>
+    <!-- Sidebar para navegação -->
+    <div class="sidebar">
+        <a th:href="@{/cadCorridas}">Cadastro de Corridas</a>
+        <a th:href="@{/cadAplicativos}">Cadastro de Aplicativos</a>
+        <a class="aqui" th:href="@{/listarAplicativo}">- Listar Aplicativos</a>
+        <a th:href="@{/cadMotoristas}">Cadastro de Motoristas</a>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+        <div class="container">
+            <h1>Lista de Aplicativos</h1>
+
+            <!-- Mensagem de erro -->
+            <div th:if="${erro}" class="alert alert-danger">
+                <p th:text="${erro}"></p>
+            </div>
+
+            <!-- Mensagem de sucesso -->
+            <div th:if="${sucesso}" class="alert alert-success">
+                <p th:text="${sucesso}"></p>
+            </div>
+
+            <!-- Tabela para listar as corridas -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Tarifa %</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="aplicativo : ${aplicativo}">
+                        <td th:text="${aplicativo.id_aplicativo}"></td>
+                        <td th:text="${aplicativo.nome}"></td>
+                        <td th:text="${aplicativo.tarifa}"></td>
+
+                        <td>
+                            <div class="acao">
+                                <!-- Link para editar corrida -->
+                                <a
+                                    th:href="@{/aplicativo/editar/{id_aplicativo}(id_aplicativo=${aplicativo.id_aplicativo})}">
+                                    <button type="button" class="edit">Editar</button>
+                                </a>
+
+                                <!-- Formulário para deletar corrida com confirmação -->
+                                <form
+                                    th:action="@{/aplicativo/deletar/{id_aplicativo}(id_aplicativo=${aplicativo.id_aplicativo})}"
+                                    method="post">
+                                    <button type="submit"
+                                        onclick="return confirm('Tem certeza que deseja deletar este aplicativo?');"
+                                        class="del">Deletar</button>
+
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Botão para cadastrar nova corrida -->
+            <br>
+            <a th:href="@{/cadAplicativos}">
+                <button type="button">Cadastrar Novo Aplicativo</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

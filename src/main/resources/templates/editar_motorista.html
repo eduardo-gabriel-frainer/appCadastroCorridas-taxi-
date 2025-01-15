@@ -1,0 +1,94 @@
+<!-- salvo COM ABCDE-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/stylesCadastro.css" />
+    <title>Editar Motorista</title>
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <a th:href="@{/cadCorridas}">Cadastro de Corridas</a>
+        <a th:href="@{/cadAplicativos}">Cadastro de Aplicativos</a>
+        <a th:href="@{/cadMotoristas}">Cadastro de Motoristas</a>
+        <a th:href="@{/listar_motorista}">- Listar Motoristas</a>
+    </div>
+
+    <div class="main-content">
+        <div class="container content-section" id="editar">
+            <h1>Editar Motoristas</h1>
+            <form th:action="@{/motorista/salvar}" th:object="${motorista}" method="post">
+                <!-- <form th:action="@{/motorista/salvar/{id_motorista}(id=${motorista.id_motorista})}" th:object="${motorista}" method="post"> -->
+                <input type="hidden" th:field="*{id_motorista}" />
+
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" th:field="*{nome}" id="nome" maxlength="150" pattern="\S.*" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" th:field="*{telefone}" 
+                    id="telefone" 
+                    name="telefone" 
+                    required 
+                    maxlength="15" 
+                    placeholder="Ex: (99) 99999-9999 ou (99) 9999-9999" 
+                    title="Digite um número de telefone válido com DDD."
+                    oninput="formatarTelefone(this)" >
+                </div>
+
+                <div class="form-group">
+                    <label for="idade">Idade:</label>
+                    <input type="number" th:field="*{idade}" id="idade" name="idade" min="18" max="110" step="1" 
+                    oninput="this.value = this.value.replace(/[^\d]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo da Carteira:</label>
+                    <select th:field="*{tipo}" id="tipo" required>
+                        <option value=""></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="placa">Placa:</label>
+                    <input type="text" th:field="*{placa}" id="placa" maxlength="7" pattern="[A-Za-z0-9]{7}"
+                        placeholder="Ex: ABC1234"
+                        title="A placa deve conter exatamente 7 caracteres, incluindo letras e números." required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Salvar</button>
+                </div>
+            </form>
+            <div class="botaoSimples">
+                <a th:href="@{/cadMotoristas}">Voltar</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function formatarTelefone(input) {
+        let valor = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+        if (valor.length <= 10) {
+            // Formato para número fixo (8 dígitos no final)
+            valor = valor.replace(/^(\d{2})(\d)/, '($1) $2'); // Adiciona o parênteses no DDD
+            valor = valor.replace(/(\d{4})(\d)/, '$1-$2'); // Adiciona o hífen no número
+        } else {
+            // Formato para número móvel (9 dígitos no final)
+            valor = valor.replace(/^(\d{2})(\d)/, '($1) $2'); // Adiciona o parênteses no DDD
+            valor = valor.replace(/(\d{5})(\d)/, '$1-$2'); // Adiciona o hífen no número
+        }
+
+        input.value = valor.slice(0, 16); // Limita o tamanho para 16 caracteres
+    }
+</script>
+
+</html>
