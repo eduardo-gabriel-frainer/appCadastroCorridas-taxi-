@@ -37,9 +37,11 @@ Fotos do Sistema em funcionamento
 ![image](https://github.com/user-attachments/assets/764239cf-a91f-4f96-80a7-6fab92678bcc)
 ![image](https://github.com/user-attachments/assets/5f8aaec6-89f4-407e-bd7a-c6986f47327f)
 ![image](https://github.com/user-attachments/assets/9c6296dd-7030-47b9-9064-fff4471cd967)
+<br>
+O sistema consta com um sistema de verificação para todos os campos, por exemplo o campo número da placa possui um padrão específico.
 ![image](https://github.com/user-attachments/assets/2a7974fc-e89c-42a4-8347-c919f55d4fbc)
 <br>
-Para quem deseja testar o sistema, na pasta static, existe um documento em txt, lá esta o Script do banco de dados
+Para quem deseja testar o sistema, na pasta static, existe um documento em txt, lá esta o Script do banco de dados.
 
 
 
