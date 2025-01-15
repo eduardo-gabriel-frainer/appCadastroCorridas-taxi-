@@ -1,116 +1,115 @@
 # Sistema de Cadastro de Corridas
 
-## O sistema atua como uma cadastramento de corridas para uma central por exemplo funciona como um taxi
-
-O sistema foi desenvolvido durante o meu Curso Técnico do Senai, esse foi o meu último trabalho, cada um recebeu um tema sorteado, e assim tivemos que desenvolver a nossa aplicação do zero, depois a apresentamos para uma banca.
+## Descrição
+Este sistema realiza o cadastro de corridas em uma central, funcionando de maneira semelhante a um sistema de táxi. Foi desenvolvido como parte do meu Curso Técnico no Senai, sendo o meu último trabalho. Cada aluno recebeu um tema sorteado e teve que desenvolver sua aplicação do zero, apresentando-a para uma banca de avaliadores.
 
 Linguagens e tecnologias utilizadas:
 
 * Java
-* Html
-* Css
+* HTML
+* CSS
 * JavaScript
-* JPA/Hybernate
+* JPA/Hibernate
 * Thymeleaf
-* Spring boot MVC
-* MySql
+* Spring Boot MVC
+* MySQL
 * Draw.IO
-* itextpdf
+* iTextPDF
 
 <hr>
 
-Fotos do Sistema em funcionamento
+## Fotos do Sistema em Funcionamento
 
+### 1. Menu Inicial
 ![image](https://github.com/user-attachments/assets/5eaa15dd-a936-44fe-a6bb-9086afe79832)
-<br>
-Esse é o menu inicial do meu sistema, ele é navegavel atravez do aba a esquerda.
+Este é o menu inicial do sistema, navegável através da aba à esquerda.
+
 <hr>
 
+### 2. Tela Principal - Cadastro de Corridas
 ![image](https://github.com/user-attachments/assets/4300febf-e450-458c-b612-bfdb1a3d7efc)
-<br>
-Essa é a tela principal do meu sistema, é aqui em que as corridas serão cadastradas
+Aqui é onde as corridas são cadastradas.
+
 <hr>
 
+### 3. Exemplo de Cadastro de Corrida
 ![image](https://github.com/user-attachments/assets/1ddf211d-b9ad-4827-8082-02e7a49730f2)
-<br>
-Exemplo de cadastro de uma corrida.
+Tela de exemplo mostrando o processo de cadastro de uma corrida.
+
 <hr>
 
+### 4. Tela de Listagem de Corridas
 ![image](https://github.com/user-attachments/assets/a566dc4b-6d7f-4e30-a239-8c0d70f55ad2)
-<br>
-Quando cadastrada uma corrida aparece da tela de listar, com as funções de deletar e alterar.
+Depois que uma corrida é cadastrada, ela aparece nesta tela, com opções de deletar e editar.
+
 <hr>
 
+### 5. Busca de Corridas por Motorista
 ![image](https://github.com/user-attachments/assets/e5023459-7ed0-4448-b6a8-19fb3a110d09)
-<br>
-Além disso a tela possui uma busca, para ver caracteristicas e corridas especificas de cada motorista
+Esta tela permite realizar buscas para visualizar as corridas específicas de cada motorista.
+
 <hr>
 
+### 6. Total Arrecadado por Motorista
 ![image](https://github.com/user-attachments/assets/836b6a98-1fdd-4def-8e73-f5de6a8a23bd)
-<br>
-Quando pesquisado um motorista, podemos ver quanto ele já arrecadou com suas corridas.
+Ao pesquisar um motorista, é possível visualizar o total arrecadado com as corridas realizadas.
+
 <hr>
 
+### 7. Geração de PDF
 ![image](https://github.com/user-attachments/assets/dcbf2925-a15d-4dc4-8a58-03a0cbfec5c6)
-<br>
-Além disso o sistema possui uma função de gerar PDF, quando clicado baixa um arquivo formato PDF para o nosso compoutador, nesse arquivo constam as corridas cadastradas.
+O sistema conta com uma função que permite gerar um PDF com a lista de corridas cadastradas, disponível para download.
+
 <hr>
 
+### 8. Cadastro de Aplicativos
 ![image](https://github.com/user-attachments/assets/bad1a12a-7e71-4233-9be9-e877fb31eb7d)
-<br>
-É nessa tela em que cadastraremos os aplicativos que estão no sistema. Uma corrida quando cadastrada precisa de um aplicativo para existir.
+Nesta tela, é possível cadastrar os aplicativos utilizados para realizar as corridas.
+
 <hr>
 
+### 9. Listagem de Aplicativos
 ![image](https://github.com/user-attachments/assets/763a2630-79d0-4c46-aec7-f17d94979d22)
-<br>
-Essa tela é resposável por listar os aplicativos cadastrados.
+Aqui são listados todos os aplicativos cadastrados no sistema.
+
 <hr>
 
+### 10. Cadastro de Motoristas
 ![image](https://github.com/user-attachments/assets/bfad6737-a67f-4d8c-8a89-cbf5c25beee8)
-<br>
-É nessa tela em que cadastraremos os motoristas que estão no sistema. Uma corrida quando cadastrada precisa de um motorista para existir.
+Nesta tela, são cadastrados os motoristas que utilizam o sistema. Cada corrida precisa de um motorista para ser registrada.
+
 <hr>
 
+### 11. Listagem de Motoristas
 ![image](https://github.com/user-attachments/assets/002b1bb4-87fb-47b9-afb9-ddd2d5e9f0be)
-<br>
-Essa tela é resposável por listar os motoristas cadastrados.
+Esta tela exibe os motoristas cadastrados no sistema.
+
 <hr>
 
+### 12. Confirmação de Deleção
 ![image](https://github.com/user-attachments/assets/a2b671a9-f9e3-4c4f-a261-9ac56ed1d58f)
-<br>
-Quando o botão de deletar de algum registro é clicado, aparece um alerta para confirmar tal ação.
+Ao clicar no botão de deletar, um alerta de confirmação é exibido para garantir a ação.
+
 <hr>
 
-
+### 13. Deleção de Motoristas com Corridas Associadas
 ![image](https://github.com/user-attachments/assets/764239cf-a91f-4f96-80a7-6fab92678bcc)
-<br>
-Esse  alerta está ai para obedecer uma regra do banco de dados, não podemos deletar um motorista que tem corridas associados por uma questão de Muitos pra Um, então para deletar um motorista precisamos primeiro delatar as corridas associadas, essa regra tambem vale para os aplicativos.
+Este alerta obedece à regra de banco de dados: não é possível excluir um motorista que tenha corridas associadas. Para excluir, é necessário primeiro excluir as corridas associadas, uma regra que também se aplica aos aplicativos.
+
 <hr>
 
+### 14. Validação de Idade para Motoristas
 ![image](https://github.com/user-attachments/assets/5f8aaec6-89f4-407e-bd7a-c6986f47327f)
-<br>
-O sistema consta com um sistema de verificação para todos os campos, por exemplo se tratando de um motorista habilitado o campo idade nao pode ser menor que 18 anos.
+O sistema verifica os dados inseridos, como no caso da idade do motorista, que não pode ser inferior a 18 anos.
+
 <hr>
 
+### 15. Validação do Número da Placa
 ![image](https://github.com/user-attachments/assets/9c6296dd-7030-47b9-9064-fff4471cd967)
-<br>
-O sistema consta com um sistema de verificação para todos os campos, por exemplo o campo número da placa possui um padrão específico.
+O sistema também valida campos como o número da placa, que precisa seguir um padrão específico.
+
 <hr>
 
+### 16. Script de Banco de Dados
 ![image](https://github.com/user-attachments/assets/2a7974fc-e89c-42a4-8347-c919f55d4fbc)
-<br>
-Para quem deseja testar o sistema, na pasta static, existe um documento em txt, lá esta o Script do banco de dados.
-<hr>
-
-
-
-
-
-
-
-
-
-
-
-
-
+Para quem deseja testar o sistema, existe um script do banco de dados na pasta "static", que contém as instruções para criação das tabelas.
