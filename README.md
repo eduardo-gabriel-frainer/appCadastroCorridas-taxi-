@@ -52,13 +52,40 @@ Quando pesquisado um motorista, podemos ver quanto ele já arrecadou com suas co
 <hr>
 
 ![image](https://github.com/user-attachments/assets/dcbf2925-a15d-4dc4-8a58-03a0cbfec5c6)
+<br>
+Além disso o sistema possui uma função de gerar PDF, quando clicado baixa um arquivo formato PDF para o nosso compoutador, nesse arquivo constam as corridas cadastradas.
+<hr>
+
 ![image](https://github.com/user-attachments/assets/bad1a12a-7e71-4233-9be9-e877fb31eb7d)
+<br>
+É nessa tela em que cadastraremos os aplicativos que estão no sistema. Uma corrida quando cadastrada precisa de um aplicativo para existir.
+<hr>
+
 ![image](https://github.com/user-attachments/assets/763a2630-79d0-4c46-aec7-f17d94979d22)
+<br>
+Essa tela é resposável por listar os aplicativos cadastrados.
+<hr>
+
 ![image](https://github.com/user-attachments/assets/bfad6737-a67f-4d8c-8a89-cbf5c25beee8)
+<br>
+É nessa tela em que cadastraremos os motoristas que estão no sistema. Uma corrida quando cadastrada precisa de um motorista para existir.
+<hr>
+
 ![image](https://github.com/user-attachments/assets/002b1bb4-87fb-47b9-afb9-ddd2d5e9f0be)
+<br>
+Essa tela é resposável por listar os motoristas cadastrados.
+<hr>
+
 ![image](https://github.com/user-attachments/assets/a2b671a9-f9e3-4c4f-a261-9ac56ed1d58f)
+<br>
+Quando o botão de deletar de algum registro é clicado, aparece um alerta para confirmar tal ação.
+<hr>
+
 
 ![image](https://github.com/user-attachments/assets/764239cf-a91f-4f96-80a7-6fab92678bcc)
+<br>
+Esse  alerta está ai para obedecer uma regra do banco de dados, não podemos deletar um motorista que tem corridas associados por uma questão de Muitos pra Um, então para deletar um motorista precisamos primeiro delatar as corridas associadas, essa regra tambem vale para os aplicativos.
+<hr>
 
 ![image](https://github.com/user-attachments/assets/5f8aaec6-89f4-407e-bd7a-c6986f47327f)
 <br>
