@@ -1,0 +1,65 @@
+CREATE DATABASE satransporte;
+
+USE satransporte;
+
+
+CREATE TABLE Motorista (
+    id_motorista INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    telefone VARCHAR(20),
+    idade INT,
+    tipo varchar(5),
+    placa VARCHAR(10)
+);
+
+CREATE TABLE Aplicativo (
+    id_aplicativo INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(40) NOT NULL,
+    tarifa float
+);
+
+CREATE TABLE Corrida (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    valor FLOAT NOT NULL,
+    forma_pagamento VARCHAR(255),
+    nome_usuario VARCHAR(250),
+    origem VARCHAR(255),
+    destino VARCHAR(255),
+     data_corrida DATETIME NOT NULL,
+    id_motorista INT,
+    id_aplicativo INT,
+    FOREIGN KEY (id_motorista) REFERENCES Motorista(id_motorista),
+    FOREIGN KEY (id_aplicativo) REFERENCES Aplicativo(id_aplicativo)
+);
+
+SHOW COLUMNS FROM Corrida;
+
+select * from corrida;
+select * from aplicativo;
+select * from motorista;
+
+INSERT INTO Motorista (nome, telefone, idade, tipo, placa) VALUES
+('João Silva', '(47) 99733-4415', 35, 'B', 'ABC1234'),
+('Maria Oliveira', '(47) 99733-4415', 29, 'C', 'XYZ5678'),
+('Carlos Souza', '(47) 99733-4415', 40, 'D', 'DEF9101'),
+('Ana Lima', '(47) 99733-4415', 32, 'B', 'GHI3456'),
+('Pedro Rocha', '(47) 99733-4415', 28, 'C', 'JKL7890');
+
+INSERT INTO Aplicativo (nome, tarifa) VALUES
+('App1', 1.5),
+('App2', 2.0),
+('App3', 2.5);
+
+INSERT INTO Corrida (valor, forma_pagamento, nome_usuario, origem, destino, data_corrida, id_motorista, id_aplicativo) VALUES
+(25.50, 'Cartao Crédito', 'Taiza Langa', 'Centro', 'Zona Norte', '2024-11-01', 1, 1),
+(22.00, 'Pix', 'Eduardo Frainer', 'Zona Oeste', 'Centro', '2024-11-02', 1, 2),
+(30.00, 'Dinheiro', 'Fabio Frainer', 'Zona Sul', 'Centro', '2024-11-03', 2, 2),
+(18.90, 'Cartao Débito', 'Ruan Veneri', 'Centro', 'Zona Norte', '2024-11-04', 2, 3),
+(15.75, 'Pix', 'Eduardo Buzzi', 'Centro', 'Zona Leste', '2024-11-05', 3, 3),
+(28.50, 'Cartao Crédito', 'Ruam Vieira', 'Centro', 'Zona Norte', '2024-11-06', 3, 1),
+(35.00, 'Dinheiro', 'Nilmar De Pim', 'Zona Sul', 'Zona Leste', '2024-11-07', 4, 1),
+(40.25, 'Cartao Crédito', 'Ghiovanni Buzzi', 'Zona Oeste', 'Centro', '2024-11-08', 4, 2),
+(19.99, 'Pix', 'Alessio Nones', 'Zona Sul', 'Centro', '2024-11-09', 5, 3),
+(50.00, 'Cartao Débito', 'Algemiro Nones', 'Zona Oeste', 'Zona Leste', '2024-11-10', 5, 1);
+
+
