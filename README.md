@@ -20,3 +20,16 @@ Linguagens e tecnologias utilizadas:
 <hr>
 
 Fotos do Sistema em funcionamento
+
+![image](https://github.com/user-attachments/assets/5eaa15dd-a936-44fe-a6bb-9086afe79832)
+![image](https://github.com/user-attachments/assets/4300febf-e450-458c-b612-bfdb1a3d7efc)
+![image](https://github.com/user-attachments/assets/1ddf211d-b9ad-4827-8082-02e7a49730f2)
+![image](https://github.com/user-attachments/assets/a566dc4b-6d7f-4e30-a239-8c0d70f55ad2)
+![image](https://github.com/user-attachments/assets/e5023459-7ed0-4448-b6a8-19fb3a110d09)
+![image](https://github.com/user-attachments/assets/836b6a98-1fdd-4def-8e73-f5de6a8a23bd)
+![image](https://github.com/user-attachments/assets/dcbf2925-a15d-4dc4-8a58-03a0cbfec5c6)
+
+
+
+
+
