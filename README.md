@@ -22,8 +22,20 @@ Linguagens e tecnologias utilizadas:
 Fotos do Sistema em funcionamento
 
 ![image](https://github.com/user-attachments/assets/5eaa15dd-a936-44fe-a6bb-9086afe79832)
+<br>
+Esse é o menu inicial do meu sistema, ele é navegavel atravez do aba a esquerda.
+<hr>
+
 ![image](https://github.com/user-attachments/assets/4300febf-e450-458c-b612-bfdb1a3d7efc)
+<br>
+Essa é a tela principal do meu sistema, é aqui em que as corridas serão cadastradas
+<hr>
+
 ![image](https://github.com/user-attachments/assets/1ddf211d-b9ad-4827-8082-02e7a49730f2)
+<br>
+Exemplo de cadastro de uma corrida.
+<hr>
+
 ![image](https://github.com/user-attachments/assets/a566dc4b-6d7f-4e30-a239-8c0d70f55ad2)
 ![image](https://github.com/user-attachments/assets/e5023459-7ed0-4448-b6a8-19fb3a110d09)
 ![image](https://github.com/user-attachments/assets/836b6a98-1fdd-4def-8e73-f5de6a8a23bd)
@@ -35,8 +47,8 @@ Fotos do Sistema em funcionamento
 ![image](https://github.com/user-attachments/assets/a2b671a9-f9e3-4c4f-a261-9ac56ed1d58f)
 
 ![image](https://github.com/user-attachments/assets/764239cf-a91f-4f96-80a7-6fab92678bcc)
-![image](https://github.com/user-attachments/assets/5f8aaec6-89f4-407e-bd7a-c6986f47327f)
 
+![image](https://github.com/user-attachments/assets/5f8aaec6-89f4-407e-bd7a-c6986f47327f)
 <br>
 O sistema consta com um sistema de verificação para todos os campos, por exemplo se tratando de um motorista habilitado o campo idade nao pode ser menor que 18 anos.
 <hr>
