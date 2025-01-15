@@ -37,8 +37,20 @@ Exemplo de cadastro de uma corrida.
 <hr>
 
 ![image](https://github.com/user-attachments/assets/a566dc4b-6d7f-4e30-a239-8c0d70f55ad2)
+<br>
+Quando cadastrada uma corrida aparece da tela de listar, com as funções de deletar e alterar.
+<hr>
+
 ![image](https://github.com/user-attachments/assets/e5023459-7ed0-4448-b6a8-19fb3a110d09)
+<br>
+Além disso a tela possui uma busca, para ver caracteristicas e corridas especificas de cada motorista
+<hr>
+
 ![image](https://github.com/user-attachments/assets/836b6a98-1fdd-4def-8e73-f5de6a8a23bd)
+<br>
+Quando pesquisado um motorista, podemos ver quanto ele já arrecadou com suas corridas.
+<hr>
+
 ![image](https://github.com/user-attachments/assets/dcbf2925-a15d-4dc4-8a58-03a0cbfec5c6)
 ![image](https://github.com/user-attachments/assets/bad1a12a-7e71-4233-9be9-e877fb31eb7d)
 ![image](https://github.com/user-attachments/assets/763a2630-79d0-4c46-aec7-f17d94979d22)
