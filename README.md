@@ -1,4 +1,4 @@
-# Sistema de Cadastro de Corridas
+# Sistema de Cadastro de Corridas 🚗🚖
 
 ## Descrição
 Este sistema realiza o cadastro de corridas em uma central, funcionando de maneira semelhante a um sistema de táxi. Foi desenvolvido como parte do meu Curso Técnico no Senai, sendo o meu último trabalho. Cada aluno recebeu um tema sorteado e teve que desenvolver sua aplicação do zero, apresentando-a para uma banca de avaliadores.
